@@ -1,0 +1,26 @@
+   goto main
+
+.make_person args name, age
+    fn person
+    ret
+
+.person
+    'Hello! My na\\me is' $name 'and Im' $age 'years old!' $puts(5)
+    $age 1 $add(2)
+    ->age
+    ret
+
+.main
+    fn make_person ->make_person
+
+    'Butjok' 24 $make_person(2)
+    ->butjok
+    'Joe' 32 $make_person(2)
+    ->joe
+    $butjok()
+    $butjok()
+    $butjok()
+    $joe()
+    $joe()
+
+    4 ->x
